@@ -1,18 +1,24 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class UserCreateDto {
     @IsString()
     @IsNotEmpty()
-    username: string;
+    sku_code: string;
 
     @IsString()
     @IsNotEmpty()
-    password: string;
+    sku_name: string;
 
     @IsString()
-    title:string
+    @IsNotEmpty()
+    owner_product:string;
 
-    @IsString()
-    @IsOptional()
-    email:string
+          
+    @IsNumber()
+    @IsNotEmpty()
+    quantity:number;
+
+    // @IsString()
+    // @IsOptional()
+    // email:string
 }
